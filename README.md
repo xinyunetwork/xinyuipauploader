@@ -12,6 +12,6 @@ Windows 上的 App Store Connect IPA 上传与开发者资源管理工具。
 
 ## 下载
 
-请前往 [产品官网](https://sq.iyqy.cn/ios-uploader/) 下载最新版。
+请前往 [产品官网](https://iyqy.cn/windows-ios)/) 下载最新版。
 
 本仓库仅用于发布安装包、使用文档、截图和更新记录，不包含商业源码。
