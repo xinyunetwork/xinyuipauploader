@@ -1,0 +1,8 @@
+releases/*
+!releases/.gitkeep
+*.p8
+*.p12
+*.mobileprovision
+*.ipa
+.env
+.env.*

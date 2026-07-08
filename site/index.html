@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IPA 上传助手 - Windows 一键上传 App Store Connect</title>
+  <meta name="description" content="Windows 图形化上传 IPA 到 App Store Connect，无需命令行。">
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f6f7fb;color:#101828;font:16px/1.65 system-ui,"Microsoft YaHei",sans-serif}.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:76px 24px 110px;text-align:center}.hero h1{font-size:48px;margin:0 0 14px}.hero p{color:#cbd5e1;font-size:20px}.btn{display:inline-block;margin:18px 6px 0;padding:13px 24px;border-radius:10px;background:#ff7417;color:#fff;text-decoration:none;font-weight:700}.btn.alt{background:#fff;color:#172033}.wrap{max-width:1120px;margin:-62px auto 70px;padding:0 22px}.shot{width:100%;border-radius:18px;box-shadow:0 24px 70px #0f172a33;border:1px solid #e5e7eb}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}.card{background:#fff;border:1px solid #e6e8ef;border-radius:14px;padding:24px}.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.price{font-size:30px;font-weight:800;color:#f4650b}.muted{color:#667085}section{margin-top:52px}footer{text-align:center;color:#667085;padding:40px}@media(max-width:760px){.hero h1{font-size:34px}.grid,.plans{grid-template-columns:1fr}.hero{padding-top:48px}}
+  </style>
+</head>
+<body>
+  <header class="hero"><h1>IPA 上传助手</h1><p>Windows 一键上传 IPA 到 App Store Connect，无需命令行。</p><a class="btn" href="/downloads/ios-uploader/IPA上传助手%20Setup%200.2.3.exe">下载 Windows 安装版</a><a class="btn alt" href="#plans">免费试用 3 天</a></header>
+  <main class="wrap"><img class="shot" src="dashboard.png" alt="IPA 上传助手仪表盘">
+    <div class="grid"><div class="card"><h3>上传更简单</h3><p class="muted">自动读取 Bundle ID、版本与构建号，隐藏 Transporter 路径和命令参数。</p></div><div class="card"><h3>凭证留在本机</h3><p class="muted">Apple 私钥与专用密码使用 Windows DPAPI 加密，不上传到授权服务器。</p></div><div class="card"><h3>错误看得懂</h3><p class="muted">把 Apple 原始上传结果整理为可操作的中文提示，并保留可选诊断日志。</p></div></div>
+    <section id="plans"><h2>授权套餐</h2><div class="plans" id="planList"><div class="card">正在读取价格…</div></div><p class="muted">每份授权绑定一台电脑与一个 Apple 账号指纹。首次使用可免费试用三天。</p></section>
+    <section><h2>运行要求</h2><div class="card"><p>支持 Windows 10/11 64 位。底层上传使用 Apple 官方 Transporter；如未安装，软件会引导从 Apple 官方入口获取并自动识别。</p></div></section>
+  </main>
+  <footer>心域网络 · 第三方开发者工具，非 Apple 官方产品 · <a href="privacy.html">隐私说明</a></footer>
+  <script>fetch('/api/desktop/plans').then(r=>r.json()).then(d=>{document.getElementById('planList').innerHTML=d.plans.map(p=>`<div class="card"><h3>${p.name}</h3><div class="price">¥${(p.priceCents/100).toFixed(0)}</div><div class="muted">${p.perpetual?'单机永久使用':p.durationDays+' 天使用权'}</div></div>`).join('')}).catch(()=>{});</script>
+</body></html>
